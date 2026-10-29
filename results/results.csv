@@ -1,0 +1,46 @@
+algorithm,dataset,n,time_ms,peak_kib
+Merge Sort,sorted,500,0.335,4.0
+Quick Sort,sorted,500,4.12,0.2
+Randomized Quick Sort,sorted,500,0.236,0.7
+Merge Sort,sorted,1000,0.6,8.0
+Quick Sort,sorted,1000,15.224,0.2
+Randomized Quick Sort,sorted,1000,0.511,0.9
+Merge Sort,sorted,2000,1.322,15.8
+Quick Sort,sorted,2000,61.978,0.2
+Randomized Quick Sort,sorted,2000,1.123,0.8
+Merge Sort,sorted,4000,2.904,31.4
+Quick Sort,sorted,4000,259.127,0.2
+Randomized Quick Sort,sorted,4000,2.429,0.9
+Merge Sort,sorted,8000,6.22,62.7
+Quick Sort,sorted,8000,1047.507,0.2
+Randomized Quick Sort,sorted,8000,4.908,1.0
+Merge Sort,reverse,500,0.285,4.0
+Quick Sort,reverse,500,2.85,0.2
+Randomized Quick Sort,reverse,500,0.246,0.7
+Merge Sort,reverse,1000,0.599,8.0
+Quick Sort,reverse,1000,11.61,0.2
+Randomized Quick Sort,reverse,1000,0.525,0.7
+Merge Sort,reverse,2000,1.367,15.8
+Quick Sort,reverse,2000,45.974,0.2
+Randomized Quick Sort,reverse,2000,1.151,0.8
+Merge Sort,reverse,4000,2.92,31.4
+Quick Sort,reverse,4000,183.982,0.2
+Randomized Quick Sort,reverse,4000,2.384,1.0
+Merge Sort,reverse,8000,6.19,62.7
+Quick Sort,reverse,8000,741.699,0.2
+Randomized Quick Sort,reverse,8000,5.155,1.0
+Merge Sort,random,500,0.351,4.0
+Quick Sort,random,500,0.202,0.6
+Randomized Quick Sort,random,500,0.273,0.6
+Merge Sort,random,1000,0.748,8.0
+Quick Sort,random,1000,0.41,0.6
+Randomized Quick Sort,random,1000,0.549,0.8
+Merge Sort,random,2000,1.653,15.8
+Quick Sort,random,2000,0.976,0.6
+Randomized Quick Sort,random,2000,1.228,0.9
+Merge Sort,random,4000,3.656,31.4
+Quick Sort,random,4000,2.077,0.8
+Randomized Quick Sort,random,4000,2.697,0.9
+Merge Sort,random,8000,7.837,62.7
+Quick Sort,random,8000,4.176,0.7
+Randomized Quick Sort,random,8000,5.588,1.0
