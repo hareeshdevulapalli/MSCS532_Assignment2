@@ -10,7 +10,7 @@ how they behave on sorted, reverse-sorted, and random input.
 | `quick_sort.py` | QUICKSORT with Lomuto PARTITION (Chapter 7), plus RANDOMIZED-QUICKSORT |
 | `test_sorts.py` | Unit tests for all three sorts |
 | `benchmark.py` | Measures execution time and peak memory, writes a CSV and graphs |
-| `results/` | `results.csv`, `time.png`, `memory.png` from the last full run |
+| `results/` | `results.csv`, `time.png`, `memory.png` from the last full run, and `execution.png` (terminal output) |
 
 ## Theory in one table
 
@@ -56,9 +56,9 @@ python3 benchmark.py --quick  # small sizes only
 
 | n = 8000 | Sorted | Reverse | Random |
 |---|---|---|---|
-| Merge Sort | 6.2 ms | 6.2 ms | 7.8 ms |
-| Quick Sort | 1047.5 ms | 741.7 ms | 4.2 ms |
-| Randomized Quick Sort | 4.9 ms | 5.2 ms | 5.6 ms |
+| Merge Sort | 6.3 ms | 6.4 ms | 8.1 ms |
+| Quick Sort | 1048.3 ms | 735.1 ms | 4.1 ms |
+| Randomized Quick Sort | 5.0 ms | 5.0 ms | 5.6 ms |
 
 Peak extra memory at n = 8000 was about 63 KiB for Merge Sort (the temporary
 halves in MERGE) and about 1 KiB for either Quick Sort.

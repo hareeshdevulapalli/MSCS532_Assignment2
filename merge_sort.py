@@ -8,60 +8,60 @@ time is Theta(n lg n) in the best, average, and worst cases.
 """
 
 
-def merge(values, low, mid, high):
-    """Merge the sorted runs values[low..mid] and values[mid+1..high].
+def merge(arr, first, middle, last):
+    """Merge the sorted runs arr[first..middle] and arr[middle+1..last].
 
     Both runs are copied into temporary lists first, which is where Merge
     Sort's Theta(n) extra memory comes from.
     """
-    left = values[low:mid + 1]
-    right = values[mid + 1:high + 1]
-    i = j = 0
-    k = low
-    # Repeatedly copy the smaller front item back into values. Using <= keeps
+    left_run = arr[first:middle + 1]
+    right_run = arr[middle + 1:last + 1]
+    li = ri = 0
+    out = first
+    # Repeatedly copy the smaller front item back into arr. Using <= keeps
     # equal items in their original order, so the sort is stable.
-    while i < len(left) and j < len(right):
-        if left[i] <= right[j]:
-            values[k] = left[i]
-            i += 1
+    while li < len(left_run) and ri < len(right_run):
+        if left_run[li] <= right_run[ri]:
+            arr[out] = left_run[li]
+            li += 1
         else:
-            values[k] = right[j]
-            j += 1
-        k += 1
+            arr[out] = right_run[ri]
+            ri += 1
+        out += 1
     # One run is used up; copy whatever is left of the other one.
-    while i < len(left):
-        values[k] = left[i]
-        i += 1
-        k += 1
-    while j < len(right):
-        values[k] = right[j]
-        j += 1
-        k += 1
+    while li < len(left_run):
+        arr[out] = left_run[li]
+        li += 1
+        out += 1
+    while ri < len(right_run):
+        arr[out] = right_run[ri]
+        ri += 1
+        out += 1
 
 
-def _merge_sort(values, low, high):
+def _merge_sort(arr, first, last):
     # Divide: a run of 0 or 1 items is already sorted (the base case).
-    if low >= high:
+    if first >= last:
         return
-    mid = (low + high) // 2
+    middle = (first + last) // 2
     # Conquer: sort each half recursively.
-    _merge_sort(values, low, mid)
-    _merge_sort(values, mid + 1, high)
+    _merge_sort(arr, first, middle)
+    _merge_sort(arr, middle + 1, last)
     # Combine: merge the two sorted halves in linear time.
-    merge(values, low, mid, high)
+    merge(arr, first, middle, last)
 
 
-def merge_sort(values):
-    """Sort ``values`` in place from smallest to largest and return it.
+def merge_sort(arr):
+    """Sort ``arr`` in place from smallest to largest and return it.
 
     Recurrence: T(n) = 2T(n/2) + Theta(n), which solves to Theta(n lg n).
     """
-    _merge_sort(values, 0, len(values) - 1)
-    return values
+    _merge_sort(arr, 0, len(arr) - 1)
+    return arr
 
 
 if __name__ == "__main__":
-    numbers = [41, 17, 93, 5, 62, 28, 74, 50]
-    print("Before sorting:", numbers)
-    merge_sort(numbers)
-    print("After sorting:", numbers)
+    sample = [41, 17, 93, 5, 62, 28, 74, 50]
+    print("Before sorting:", sample)
+    merge_sort(sample)
+    print("After sorting:", sample)
